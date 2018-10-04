@@ -34,9 +34,28 @@ hold on
 plot(t,fi_t,'--','color','r','linewidth',2.5)
 legend('Componente par','Componente impar')
 
-close all
 figure(3)
-
-f_t=(p((t-1)/2)+3.*p((2.*t-7)/6)+6.*p((t-7)/4)-2.*p((t-10)/2)+p((-t-1)/2)+3.*p((2.*-t-7)/6)+6.*p((-t-7)/4)-2.*p((-t-10)/2))/2;
-plot(t,f_t,'color','b','linewidth',2.5)
+%Componente par
+fp_t=(c_1_2(t)+c_1_2(-t))/2;
+%Componente impar
+fi_t=(c_1_2(t)-c_1_2(-t))/2;
+plot(t,fp_t,'color','b','linewidth',2.5)
+axis([-13 13 -3.5 3.5])
 grid minor
+hold on
+plot(t,fi_t,'--','color','r','linewidth',2.5)
+legend('Componente par','Componente impar')
+
+figure(4)
+
+%Componente par
+fp_t=(d_1_2(t)+d_1_2(-t))/2;
+%Componente impar
+fi_t=(d_1_2(t)-d_1_2(-t))/2;
+
+plot(t,fp_t,'color','b','linewidth',2.5)
+axis([-7 7 -3.5 3.5])
+grid minor
+hold on
+plot(t,fi_t,'--','color','r','linewidth',2.5)
+legend('Componente par','Componente impar')
